@@ -1,8 +1,6 @@
 if (NOT PICO_PROGRAM_MAIN_ENTRY)
         set(OVERRIDE_DATA_PIN)
 	set(OUTPUT_DATA_PIN 16)
-	set(SECOND_SEGMENT_INDEX 228)
-	set(SECOND_SEGMENT_REVERSED ON)
 endif()
 
 cmake_minimum_required(VERSION 3.13)

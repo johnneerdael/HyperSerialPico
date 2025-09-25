@@ -1,6 +1,22 @@
 if (NOT PICO_PROGRAM_MAIN_ENTRY)
-        set(OVERRIDE_DATA_PIN)
-	set(OUTPUT_DATA_PIN 16)
+	# User configuration for HyperSerialPico section starts here
+
+	# Some boards, such as the first Adafruit revisions, may have trouble booting properly
+	# due to bad componets used in the design.
+	# Turn this setting to ON if your rp2040 is not detected after firmware upload and reset
+	set(BOOT_WORKAROUND OFF)
+
+	# Default output data pin for the non-SPI LED strips (only for sk6812/ws2812b)
+	set(OUTPUT_DATA_PIN 2)
+
+	# Use multi-segment, starting index of second led strip or OFF to disable
+	set(SECOND_SEGMENT_INDEX 136)
+
+	# If multi-segment is used and it's reversed, set this option to ON to enable reversing
+	set(SECOND_SEGMENT_REVERSED ON)
+
+	# User configuration section ends here
+	# Usually you don't need to change anything below this section
 endif()
 
 cmake_minimum_required(VERSION 3.13)
